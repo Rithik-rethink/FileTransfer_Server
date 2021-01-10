@@ -1,6 +1,6 @@
 const urls = {
 
-    node_url : 'http://localhost:8080',
+    node_url : 'http://ea87aa6239b6.ngrok.io',
 }
 
 export default urls;
