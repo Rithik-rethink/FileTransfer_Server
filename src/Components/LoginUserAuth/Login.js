@@ -2,6 +2,9 @@ import React,{useState} from 'react';
 import './Login.css';
 import {TextField , Button} from '@material-ui/core';
 import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
+import Axios from 'axios';
+import api from '../../client_info.js';
+
 
 function Login(){
     const [User , setUser] = useState('');
@@ -23,7 +26,29 @@ function Login(){
     const handleLogin = () => {
         console.log(User);
         console.log(Pass);
-        
+        let api_url = `${api.node_url}/api/usr/login`;
+        Axios.get(api_url,{"headers":{
+            "Accept" : "application/json",
+            "content-type":"application/json"
+        }}).then((res)=>{
+            console.log(res.data.message);
+        }).catch((err)=>{
+            console.log(err.message);
+        });
+        const params = {
+            "id" : User,
+            "pass" : Pass 
+        }
+        Axios.post(api_url,params,
+        {"headers":{
+            "Accept":"application/json",
+            "content-type": "application/json"
+        }}).then((res)=>{
+            console.log(res.data.message);
+        }).catch((e)=>{
+            console.log(e.message);
+        })
+
     }
     return(
         <div className='login'>
