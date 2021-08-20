@@ -6,3 +6,9 @@
 * A website made for transferring files from my local harddrive on the web. 
 * Allows streaming of music, movies etc.
 * Files present in the harddrive e.g games, movies, notes etc, can be easily downloaded.
+
+# Tools Used
+* React JS
+  * used to build the frontend part of the website
+* Express JS 
+  * handled the backend, the core logic and authentication of users.
